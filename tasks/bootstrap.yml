@@ -1,0 +1,17 @@
+# This file is subject to the terms and conditions defined in file 'LICENSE',
+# which is part of this repository.
+---
+- name: Set docker host
+  command: "dockercloud-agent set DockerHost={{ dockercloud_dockerhost }}"
+
+- name: Set host
+  command: "dockercloud-agent set Token={{ dockercloud_host }}"
+
+- name: Set token
+  command: "dockercloud-agent set Token={{ dockercloud_token }}"
+
+- name: Restart docker cloud agent
+  service:
+    name: dockercloud-agent
+    state: restarted
+  become: true

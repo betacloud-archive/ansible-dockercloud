@@ -1,0 +1,27 @@
+# This file is subject to the terms and conditions defined in file 'LICENSE',
+# which is part of this repository.
+---
+- include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Install additional packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ additional_packages }}"
+  become: true
+
+
+- include: "{{ action }}-{{ ansible_os_family }}.yml"
+
+- name: Install docker cloud agent
+  package:
+    name: dockercloud-agent
+    state: present
+  become: true
+
+- name: Start/enable docker cloud agent
+  service:
+    name: dockercloud-agent
+    state: started
+    enabled: yes
+  become: true
