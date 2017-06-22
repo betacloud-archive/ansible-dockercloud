@@ -10,7 +10,6 @@
   with_items: "{{ additional_packages }}"
   become: true
 
-
 - include: "{{ action }}-{{ ansible_os_family }}.yml"
 
 - name: Install docker cloud agent
@@ -25,3 +24,5 @@
     state: started
     enabled: yes
   become: true
+
+- include: bootstrap.yml
