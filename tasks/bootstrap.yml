@@ -5,7 +5,7 @@
   command: "dockercloud-agent set DockerHost={{ dockercloud_dockerhost }}"
 
 - name: Set host
-  command: "dockercloud-agent set Token={{ dockercloud_host }}"
+  command: "dockercloud-agent set Host={{ dockercloud_host }}"
 
 - name: Set token
   command: "dockercloud-agent set Token={{ dockercloud_token }}"

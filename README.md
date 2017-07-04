@@ -3,14 +3,6 @@
 ![Ansible 2.2](https://img.shields.io/badge/Ansible-2.2-green.png?style=flat)
 ![Ansible 2.3](https://img.shields.io/badge/Ansible-2.3-green.png?style=flat)
 
-This is an Ansible role that installs the Docker Cloud agent on Ubuntu and CentOS servers.
-
-Supported Linux distributions
------------------------------
-
-* Ubuntu 16.04 (Xenial)
-* CentOS 7 (not yet implemented)
-
 License
 -------
 
