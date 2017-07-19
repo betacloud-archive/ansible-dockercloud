@@ -1,4 +1,8 @@
 # This file is subject to the terms and conditions defined in file 'LICENSE',
 # which is part of this repository.
 ---
-- include: "{{ action }}.yml"
+- name: Include distribution specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Include tasks required by the action
+  include: "{{ action }}.yml"
